@@ -1,0 +1,36 @@
+Password Authentication is the process of checking the identity of a user. Almost every online platform today makes sure that they only give access to the real user which can be only possible by asking for a password while a user wants to log in to the account. So in this article, I will take you through the task of password authentication using Python.
+
+
+What is a Password Authentication System?
+A password authentication system is a system that is used for the identification of a user. Think of it like a login screen that you see while logging in to your Facebook account. It asks for your email or a username and then it asks for your password. If you have entered the correct password then it verifies you as the real user.
+
+Creating a logic-based password authentication system is also a popular question in the coding interviews. So, in the section below, I will take you through how to create a password authentication system using Python.
+
+Password Authentication using Python
+To create a password authentication system using Python you have to follow the steps mentioned below:
+
+Create a dictionary of usernames with their passwords.
+Then you have to ask for user input as the username by using the input function in Python.
+Then you have to use the getpass module in Python to ask for user input as the password. Here we are using the getpass module instead of the input function to make sure that the user doesn’t get to see what he/she write in the password field.
+So let’s follow the steps mentioned above to create a password authentication system using Python:
+
+
+import getpass
+database = {"aman.kharwal": "123456", "kharwal.aman": "654321"}
+username = input("Enter Your Username : ")
+password = getpass.getpass("Enter Your Password : ")
+for i in database.keys():
+    if username == i:
+        while password != database.get(i):
+            password = getpass.getpass("Enter Your Password Again : ")
+        break
+print("Verified")
+view rawpassword authentication.py hosted with ❤ by Ai
+Enter Your Username : aman.kharwal
+Enter Your Password : ··········
+Enter Your Password Again : ··········
+Enter Your Password Again : ··········
+Verified
+Summary
+So this is how we can authenticate the identity of a user by using the Python programming language. Now you can try the same logic with more usernames and other data structures also. I hope you liked this article on how to create a password authentication system using Python. Feel free to ask your valuable questions in the comments section below.
+
